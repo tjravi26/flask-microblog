@@ -14,7 +14,7 @@ class User(db.Model):
         return f"User: {self.username}"
 
 
-class Posts(db.Model):
+class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(140))
     timestamp = db.Column(db.DateTime, index=True,
