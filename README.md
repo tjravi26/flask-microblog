@@ -1,5 +1,16 @@
 # Welcome to my Flask-Microblog!
 
+### Flask commands in the terminal
+
+- Don't forget to setup FLASK_APP in '.flaskenv' file.
+- If the above point is ignored, use the following command:
+
+```python
+export FLASK_APP=microblog.py
+```
+
+- Import 'db' and database models.
+
 ### Database models
 
 - Every table must have a 'primary_key'.
