@@ -7,7 +7,13 @@
 
 ### Flask-Migrate
 
-- To initiate a database change:
+- To initiate flask-migration database:
+
+```python
+flask db init
+```
+
+- To tack a database change:
 
 ```python
 flask db migrate -m "<some optional user message>"
