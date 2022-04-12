@@ -1,5 +1,7 @@
 # Welcome to my Flask-Microblog!
 
+---
+
 ### Flask commands in the terminal
 
 - Don't forget to setup FLASK_APP in '.flaskenv' file.
@@ -9,12 +11,16 @@
 export FLASK_APP=microblog.py
 ```
 
-- Import 'db' and database models.
+- Import 'db' and other database models.
+
+---
 
 ### Database models
 
 - Every table must have a 'primary_key'.
 - To link one table to another type use 'db.ForeignKey'.
+
+---
 
 ### Flask-Migrate
 
@@ -44,3 +50,16 @@ flask db upgrade
 ```python
 flask db downgrade
 ```
+
+---
+
+### Password Security
+
+- Done using werkzeug security dependency which is preinstalled with flask.
+- To implement:
+
+```python
+from werkzeug.security import generate_password_hash, check_password_hash
+```
+
+- Import and define the above modules in a User model in 'models.py'.
