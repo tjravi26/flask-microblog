@@ -15,6 +15,14 @@ export FLASK_APP=microblog.py
 
 ---
 
+### SQLAlchemy
+
+- It's an Object Relational Mapper.
+- Used for simplifying sql queries.
+- Has its own query methods like 'get(), filter_by(), all(), desc(), first()' etc.
+
+---
+
 ### Database models
 
 - Every table must have a 'primary_key'.
@@ -63,3 +71,37 @@ from werkzeug.security import generate_password_hash, check_password_hash
 ```
 
 - Import and define the above modules in a User model in 'models.py'.
+
+---
+
+### Flask-Login
+
+- To remember user login session.
+- Import the follwing in 'models.py'.
+
+```python
+from flask_login import UserMixin
+```
+
+- Add the imported module to the User model class.
+- Import and initiate the following in "_init_.py".
+
+```python
+from flask_login import LoginManager
+```
+
+- Pass the flask app through the login manager.
+
+```python
+login = LoginManager(app)
+```
+
+- Import and use 'url_for()' instead of relative paths for templates.
+
+---
+
+### User Registration Form
+
+- Create a class RegistrationForm and import FlaskForm.
+- import validators using wtforms.validators. Ex - DataRequired, ValidationError, EqualTo.
+- A ValidationError is used to raise an error if the username or email address already exists.
