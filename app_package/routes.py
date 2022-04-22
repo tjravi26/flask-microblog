@@ -18,7 +18,7 @@ def before_request():
 @app.route('/index')
 @login_required  # Forces users to login.
 def index():
-    user = {'username': 'Ravi'}
+    # user = {'username': 'Ravi'}
     posts = [
         {
             'author': {'username': 'Charlie'},
@@ -57,7 +57,7 @@ def logout():
     return redirect(url_for('index'))
 
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
@@ -87,7 +87,7 @@ def user(username):
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
-    form = EditProfileForm()
+    form = EditProfileForm(current_user.username)
     if form.validate_on_submit():
         current_user.username = form.username.data
         current_user.about_me = form.about_me.data

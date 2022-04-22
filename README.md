@@ -120,3 +120,20 @@ def avatar(self, size):  # For adding avatars to user profiles.
         digest = md5(self.email.lower().encode('utf-8')).hexdigest()
         return f"https://www.gravatar.com/avatar/{digest}?d=identicon&s={size}"
 ```
+
+---
+
+### Error Handling
+
+- Create a seperate module called 'errors.py'.
+- Import app & db.
+- Create view functions and assign a decorator.
+- Example:
+
+```python
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'), 404
+```
+
+- Redirect the view function to a dedicated html page.
