@@ -105,3 +105,18 @@ login = LoginManager(app)
 - Create a class RegistrationForm and import FlaskForm.
 - import validators using wtforms.validators. Ex - DataRequired, ValidationError, EqualTo.
 - A ValidationError is used to raise an error if the username or email address already exists.
+
+---
+
+### Gravatar Service
+
+- Provides avatars for users.
+- Requires email address and size of the image as input.
+- Import _md5_ module from _hashlib_.
+- Add an avatar function to the class _User_.
+
+```python
+def avatar(self, size):  # For adding avatars to user profiles.
+        digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+        return f"https://www.gravatar.com/avatar/{digest}?d=identicon&s={size}"
+```
